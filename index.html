@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/carteira-de-identidade.png" type="image/x-icon">
+
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <main>
+        <div class="container">   
+      
+            <form class="form" method="POST" action="">
+
+                <h1 class="titulo">Faça já seu <br> Cadastro </h1>
+                
+                <input class="campos" type="text" name="nome" placeholder="Nome..." required>
+                <input class="campos" type="email" name="email" placeholder="exemplo@gmail.com" required>
+                <input class="campos" type="password" name="senha" placeholder="******" required><br>
+
+                <button class="botao">Enviar</button>
+    
+            </form>
+        </div> 
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Não envie para o seu servidor! Use um ID de token do lado do servidor em vez disso.
+        console.log('Nome: ' + profile.getName());
+        console.log('Imagem URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // Este token só é necessário para uso do lado do servidor.
+      }
+    </script>
+  </body>
+</html>
+Este código criará um botão "Entrar com o Google" em sua página. Quando o usuário clicar neste botão e fornecer as credenciais de login do Google, a função onSignIn será chamada e as informações do usuário autenticado serão exibidas no console do navegador. Lembre-se de que você precisará configurar o client_id para o seu próprio projeto no Console do Google Cloud.
+        
+    </main>
+</body>
+</html>
